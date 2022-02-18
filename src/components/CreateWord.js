@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import useFetch from "../hooks/useFetch";
 
 function CreateWord() {
-  const days = useFetch("http://localhost:3001/days");
+  const days = useFetch("http://localhost:3000/days");
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,7 +12,7 @@ function CreateWord() {
 
     if (!isLoading) {
       setIsLoading(true);
-      fetch(`http://localhost:3001/words/`, {
+      fetch(`http://localhost:3000/words/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,15 +39,15 @@ function CreateWord() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="input_area">
+      <div className='input_area'>
         <label>Eng</label>
-        <input type="text" placeholder="computer" ref={engRef} />
+        <input type='text' placeholder='computer' ref={engRef} />
       </div>
-      <div className="input_area">
+      <div className='input_area'>
         <label>Kor</label>
-        <input type="text" placeholder="컴퓨터" ref={korRef} />
+        <input type='text' placeholder='컴퓨터' ref={korRef} />
       </div>
-      <div className="input_area">
+      <div className='input_area'>
         <label>Day</label>
         <select ref={dayRef}>
           {days.map((day) => (
@@ -60,8 +60,7 @@ function CreateWord() {
       <button
         style={{
           opacity: isLoading ? 0.3 : 1,
-        }}
-      >
+        }}>
         {isLoading ? "Saving..." : "저장"}
       </button>
     </form>
