@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import useFetch from "../hooks/useFetch";
 
 function CreateWord() {
-  const days = useFetch("http://localhost:3000/days");
+  const days = useFetch("http://localhost:3001/days");
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,7 +12,7 @@ function CreateWord() {
 
     if (!isLoading) {
       setIsLoading(true);
-      fetch(`http://localhost:3000/words/`, {
+      fetch(`http://localhost:3001/words/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

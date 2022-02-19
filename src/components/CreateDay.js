@@ -2,11 +2,11 @@ import { useHistory } from "react-router";
 import useFetch from "../hooks/useFetch";
 
 function CreateDay() {
-  const days = useFetch("http://localhost:3000/days");
+  const days = useFetch("http://localhost:3001/days");
   const history = useHistory();
 
   function addDay() {
-    fetch(`http://localhost:3000/days/`, {
+    fetch(`http://localhost:3001/days/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

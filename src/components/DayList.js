@@ -5,7 +5,7 @@ import dummy from "../db/data.json";
 
 function DayList() {
   console.log(dummy);
-  const days = useFetch("http://localhost:3000/days");
+  const days = useFetch("http://localhost:3001/days");
 
   if (days.length === 0) {
     return <span>Loading...</span>;
